@@ -176,7 +176,7 @@ class Commands(commands.Cog):
         """Get the link to Tims website!"""
         embed = discord.Embed(title="Tim's Website", description="[Visit the website!](https://techwithtim.net/)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.em(embed=embed)
 
     @commands.command()
     async def git(self, ctx):
@@ -184,7 +184,7 @@ class Commands(commands.Cog):
         embed = discord.Embed(title="Git Download Link",
                               description="[Download GIT Here!](https://git-scm.com/downloads)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.em(embed=embed)
 
     @commands.command()
     async def twitter(self, ctx):
@@ -192,7 +192,7 @@ class Commands(commands.Cog):
         embed = discord.Embed(title="Tech With Tim Twitter!",
                               description="[View Tim's Twitter!](https://twitter.com/TechWithTimm)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.em(embed=embed)
 
     @commands.command(name='instagram', aliases=['insta'])
     async def insta_(self, ctx):
@@ -200,7 +200,7 @@ class Commands(commands.Cog):
         embed = discord.Embed(title="Tech With Tim Instagram!",
                               description="[View Tim's Instagram!](https://instagram.com/tech_with_tim)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.em(embed=embed)
 
     def members(self):
         members = set(self.bot.get_all_members())
