@@ -181,21 +181,21 @@ class Commands(commands.Cog):
     async def git(self, ctx):
         """Git download link"""
         await ctx.message.delete()
-        await ctx.send(title="Git Download Link",
+        await ctx.em(title="Git Download Link",
                        description="[Download GIT Here!](https://git-scm.com/downloads)")
 
     @commands.command()
     async def twitter(self, ctx):
         """View Tims Twitter"""
         await ctx.message.delete()
-        await ctx.send(title="Tech With Tim Twitter!",
+        await ctx.em(title="Tech With Tim Twitter!",
                        description="[View Tim's Twitter!](https://twitter.com/TechWithTimm)")
 
     @commands.command(name='instagram', aliases=['insta'])
     async def insta_(self, ctx):
         """View Tims Instagram"""
         await ctx.message.delete()
-        await ctx.send(title="Tech With Tim Instagram!",
+        await ctx.em(title="Tech With Tim Instagram!",
                        description="[View Tim's Instagram!](https://instagram.com/tech_with_tim)")
 
     def members(self):
