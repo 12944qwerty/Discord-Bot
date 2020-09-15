@@ -111,26 +111,26 @@ class Tim(commands.AutoShardedBot):
 
         if isinstance(error, (BadUnionArgument, CommandOnCooldown, PrivateMessageOnly,
                               NoPrivateMessage, MissingRequiredArgument, ConversionError)):
-            return await ctx.send(str(error))
+            return await ctx.em(title='Error', description=str(error))
 
         elif isinstance(error, BotMissingPermissions):
-            return await ctx.send('I am missing these permissions to do this command:'
-                                  f'\n{self.lts(error.missing_perms)}')
+            return await ctx.em(title='I am missing these permissions to do this command:',
+                                description=self.lts(error.missing_perms))
 
         elif isinstance(error, MissingPermissions):
-            return await ctx.send('You are missing these permissions to do this command:'
-                                  f'\n{self.lts(error.missing_perms)}')
+            return await ctx.em(title='You are missing these permissions to do this command:',
+                                description=self.lts(error.missing_perms))
 
         elif isinstance(error, (BotMissingAnyRole, BotMissingRole)):
-            return await ctx.send(f'I am missing these roles to do this command:'
-                                  f'\n{self.lts(error.missing_roles or [error.missing_role])}')
+            return await ctx.em(title='I am missing these roles to do this command:',
+                                description=self.lts(error.missing_roles or [error.missing_role]))
 
         elif isinstance(error, (MissingRole, MissingAnyRole)):
-            return await ctx.send(f'You are missing these roles to do this command:'
-                                  f'\n{self.lts(error.missing_roles or [error.missing_role])}')
+            return await ctx.em(title='You are missing these roles to do this command:',
+                                description=self.lts(error.missing_roles or [error.missing_role]))
 
         elif isinstance(error, BadArgument) and ctx.command.name in ('rep', 'report'):
-            return await ctx.send(f"Can't find that member. Please try again.")
+            return await ctx.em(title="Error", description="Can't find that member. Please try again.")
 
         else:
             raise error
