@@ -174,33 +174,29 @@ class Commands(commands.Cog):
     @commands.command(name='website', aliases=['web'])
     async def web_(self, ctx):
         """Get the link to Tims website!"""
-        embed = discord.Embed(title="Tim's Website", description="[Visit the website!](https://techwithtim.net/)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.em(title="Tim's Website", description="[Visit the website!](https://techwithtim.net/)")
 
     @commands.command()
     async def git(self, ctx):
         """Git download link"""
-        embed = discord.Embed(title="Git Download Link",
-                              description="[Download GIT Here!](https://git-scm.com/downloads)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.send(title="Git Download Link",
+                       description="[Download GIT Here!](https://git-scm.com/downloads)")
 
     @commands.command()
     async def twitter(self, ctx):
         """View Tims Twitter"""
-        embed = discord.Embed(title="Tech With Tim Twitter!",
-                              description="[View Tim's Twitter!](https://twitter.com/TechWithTimm)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.send(title="Tech With Tim Twitter!",
+                       description="[View Tim's Twitter!](https://twitter.com/TechWithTimm)")
 
     @commands.command(name='instagram', aliases=['insta'])
     async def insta_(self, ctx):
         """View Tims Instagram"""
-        embed = discord.Embed(title="Tech With Tim Instagram!",
-                              description="[View Tim's Instagram!](https://instagram.com/tech_with_tim)")
         await ctx.message.delete()
-        await ctx.send(embed=embed)
+        await ctx.send(title="Tech With Tim Instagram!",
+                       description="[View Tim's Instagram!](https://instagram.com/tech_with_tim)")
 
     def members(self):
         members = set(self.bot.get_all_members())
