@@ -178,8 +178,7 @@ class YouTube(commands.Cog):
         else:
             title = f"Video search results"
             description = string
-        embed = discord.Embed(title=title, description=description, color=discord.Color.red())
-        await ctx.send(embed=embed)
+        await ctx.em(title=title, description=description, color=discord.Color.red())
 
     @commands.command(name='subscribe', aliases=['sub'])
     @commands.guild_only()
